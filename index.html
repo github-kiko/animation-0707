@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 解决屏蔽被滑动和放大缩小问题 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="edge">
+    <title>❤️ 女神，七夕节快乐~</title>
+</head>
+<style>
+       html,body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        #cover {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: rgba(0, 0, 0, 0.5);
+     width:100%; 
+    height: 100%;
+    filter: alpha(opacity=100); 
+    opacity: 1; 
+    display: block;
+    z-Index: 999;
+    overflow:'hidden'
+}
+.cover-box{
+    width:100%; 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #CFEBE4;
+    
+}
+
+.iframeStart{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+}
+.iframeBox{
+    width: 100%;
+    height: 100%;
+    
+
+}
+*{
+margin: 0;
+padding: 0;
+}
+
+
+</style>
+<body>
+  <div class="iframeBox">
+    <iframe class="iframeStart" id="iframeStart"  oallowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  src="./start.html" frameborder="0"></iframe>
+
+  </div>
+  
+  
+    <iframe class="iframeMusic"  id="iframeMusic" src="./music.html" ></iframe>
+
+          <!-- 遮罩层 -->
+     <div id="cover" @touchmove.prevent>
+            <div class="cover-box"> 
+                <h4> 这就是程序员的浪漫了吗</h4>
+                <div style="margin-top:20px ;"> 点击屏幕任意位置观看</div> 
+            </div>
+          
+     </div>
+
+
+   
+
+    <script>
+          // 遮罩层
+    var cover = document.getElementById('cover');
+    cover.onclick = () => {
+            //隐藏遮罩层
+            cover.style.display="none"
+            // 播放音乐
+            const iframeMusic = document.getElementById("iframeMusic").contentWindow.window.methods;
+            iframeMusic.playMusic();
+            // 初始化canvas
+            const iframeStart = document.getElementById("iframeStart").contentWindow.window.methods;
+            iframeStart.playCanvas();
+     };
+    </script>
+</body>
+</html>

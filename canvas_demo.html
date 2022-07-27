@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>canvas动画</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        height: 100%;
+        height: 100%;
+      }
+      .container {
+        height: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .canvas {
+        width: 800px;
+        height: 400px;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <canvas class="canvas"></canvas>
+    </div>
+
+    <script>
+      const canvas = document.querySelector("canvas");
+      const ctx = canvas.getContext("2d");
+    //   ctx.xxx（x,y,width,height）
+    //   x:绘制图形x轴的坐标
+    //   y:绘制图形y轴的坐标
+    //   width：绘制图形宽度
+    //   height:绘制图形高度
+
+
+      // ctx.fillRect(10, 0, 50, 50); //在坐标为（10,0）的地方绘制一个50*50的矩形
+      // ctx.strokeRect(70, 30, 50, 50); //在（70,30）的地方绘制一个50*50的边框
+
+    // //   setTimeout(() => {
+    // //     ctx.clearRect(0, 0, 900, 900); //清理指定canvas区域的屏幕
+    // //   }, 3000);
+
+      // 绘制一条直线
+      // ctx.beginPath();
+      // ctx.moveTo(10, 70);
+      // ctx.lineTo(200, 140);
+      // ctx.stroke();
+
+
+//绘制一下笑脸
+//  ctx.arc(x, y, r, startAngle, endAngle, anticlockwise)
+// 以(x, y) 为圆心，以r 为半径，从 startAngle 弧度开始到endAngle弧度结束。
+// anticlosewise 是布尔值，true 表示逆时针，false 表示顺时针(默认是顺时针)
+// ctx.beginPath();
+// ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // 绘制
+// ctx.moveTo(110, 75);
+// ctx.arc(75, 75, 35, 0, Math.PI, false);   // 口(顺时针)
+// ctx.moveTo(65, 65);
+// ctx.arc(60, 65, 5, 0, Math.PI * 2, true);  // 左眼
+// ctx.moveTo(95, 65);
+// ctx.arc(90, 65, 5, 0, Math.PI * 2, false);  // 右眼
+// ctx.stroke();
+
+//给图形加上颜色
+// ctx.fillStyle = 'rgb(200,100,200)';
+// ctx.fillRect(30, 30, 50, 50);
+
+// ctx.strokeStyle = 'rgb(200,100,200)';
+// ctx.strokeRect(80, 80, 50, 50);
+
+
+// 绘制字体
+ctx.font = "48px serif";
+ctx.fillText("东东吖", 10, 50);
+
+
+
+
+
+    </script>
+  </body>
+</html>
